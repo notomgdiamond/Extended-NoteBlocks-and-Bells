@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(SoundEvent.class)
 public abstract class ExampleMixin {
 
-    private static final float TARGET_RANGE = 64.0F;
+    private static final float TARGET_RANGE = 200.0F;
 
     @Inject(
         method = "getRange(F)F",
