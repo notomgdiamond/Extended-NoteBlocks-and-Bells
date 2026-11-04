@@ -25,7 +25,7 @@ public abstract class SoundEngineMixin {
 
         if (id.startsWith("minecraft:block.note_block.")
                 || id.startsWith("minecraft:block.bell.")) {
-            return 128;
+            return 150;
         }
 
         return sound.getAttenuationDistance();
