@@ -1,4 +1,3 @@
-
 package extendednoteblocks.mixin.client;
 
 import net.minecraft.client.resources.sounds.Sound;
