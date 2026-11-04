@@ -14,21 +14,20 @@ public abstract class SoundEngineMixin {
         method = "play",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/client/resources/sounds/Sound;getAttenuationDistance(F)F"
+            target = "Lnet/minecraft/client/resources/sounds/Sound;getAttenuationDistance()I"
         )
     )
-    private float extendednoteblocks$attenuationDistance(
+    private int extendednoteblocks$attenuationDistance(
             Sound sound,
-            float volume,
             SoundInstance instance
     ) {
-        String id = instance.getLocation().toString();
+        String id = instance.getIdentifier().toString();
 
         if (id.startsWith("minecraft:block.note_block.")
                 || id.startsWith("minecraft:block.bell.")) {
-            return 200.0F;
+            return 200;
         }
 
-        return sound.getAttenuationDistance(volume);
+        return sound.getAttenuationDistance();
     }
 }
